@@ -1,0 +1,33 @@
+Node* flatten(Node* root){    
+	
+	if(root==NULL || root->right == NULL) return root;
+	
+	Merge(root, flatten(root->right));
+	
+	
+}
+
+
+void Merge(Node* a, Node* b){
+	if(a==NULL) return b;
+	
+	if(b==NULL) return a;
+	
+	Node* result;
+	
+	if(a->data<b->data){
+		result=a;
+		result=Merge(root->down,b);
+	
+	
+	}
+	
+	if(a->data > b->data){
+		result = b;
+		result = Merge(a,root->down);
+	}
+	
+	return result;
+	
+	
+}
